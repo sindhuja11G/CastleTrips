@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CastleTrips - Places</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f8f9ff;
+        margin: 0;
+      }
+
+      /* HEADER */
+      header {
+        background: #191216;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+      header h1 {
+        font-family: "Pacifico", cursive;
+        font-size: 2rem;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      /* SECTION */
+      .section-title {
+        text-align: center;
+        margin: 40px 0 20px;
+        color: #4c6ef5;
+        font-family: Pacifico;
+        font-size: 2rem;
+      }
+
+      .places-container {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .place-card {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .place-card img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .btn {
+        margin-top: 10px;
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #4c6ef5, #ffb6c1);
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 12px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      footer {
+        margin-top: 40px;
+        background: #93a5ed;
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CastleTrips</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="places.html">Places</a>
+        <a href="payment.html">Book Now</a>
+      </nav>
+    </header>
+
+    <h2 class="section-title">Explore Disney Destinations</h2>
+
+    <div class="places-container">
+      <!-- 1 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1684179271676-5caadb0e4b6f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fERpc25leWxhbmQlMjAlMjAlRTIlODAlOTMlMjBDYWxpZm9ybmlhfGVufDB8fDB8fHwy"
+        />
+        <h3>Disneyland Resort – California, USA</h3>
+        <button class="btn" onclick="openModal('modal1')">View Details</button>
+      </div>
+
+      <!-- 2 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1671742554878-a5c35488eeda?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8V2FsdCUyMERpc25leSUyMFdvcmxkJTIwJUUyJTgwJTkzJTIwRmxvcmlkYSUyQyUyMFVTQXxlbnwwfHwwfHx8Mg%3D%3D"
+        />
+        <h3>Walt Disney World – Florida, USA</h3>
+        <button class="btn" onclick="openModal('modal2')">View Details</button>
+      </div>
+
+      <!-- 3 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1602769421499-092e320249da?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fERpc25leWxhbmQlMjBQYXJpcyUyMCVFMiU4MCU5MyUyMEZyYW5jZXxlbnwwfHwwfHx8Mg%3D%3D"
+        />
+        <h3>Disneyland Paris – France</h3>
+        <button class="btn" onclick="openModal('modal3')">View Details</button>
+      </div>
+
+      <!-- 4 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1547782126-87bb2bead14e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VG9reW8lMjBEaXNuZXl8ZW58MHx8MHx8fDI%3D"
+        />
+        <h3>Tokyo Disney – Japan</h3>
+        <button class="btn" onclick="openModal('modal4')">View Details</button>
+      </div>
+
+      <!-- 5 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1737039343462-8dccb0e57262?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEhvbmclMjBLb25nJTIwRGlzbmV5bGFuZHxlbnwwfHwwfHx8Mg%3D%3D"
+        />
+        <h3>Hong Kong Disneyland</h3>
+        <button class="btn" onclick="openModal('modal5')">View Details</button>
+      </div>
+
+      <!-- 6 -->
+      <div class="place-card">
+        <img
+          src="https://images.unsplash.com/photo-1714126563327-01941e6e84ce?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNoYW5naGFpJTIwRGlzbmV5fGVufDB8fDB8fHwy"
+        />
+        <h3>Shanghai Disney Resort – China</h3>
+        <button class="btn" onclick="openModal('modal6')">View Details</button>
+      </div>
+    </div>
+
+    <!-- MODALS -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1652388858704-c9e68bdfe5d6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fERpc25leWxhbmQlMjAlMjAlRTIlODAlOTMlMjBDYWxpZm9ybmlhfGVufDB8fDB8fHwy"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Disneyland Resort, California</h2>
+        <p>
+          The original Disney park filled with classic rides, parades, magical
+          shows, and timeless Disney charm!
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1683512074317-d395ff464017?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFdhbHQlMjBEaXNuZXklMjBXb3JsZCUyMCVFMiU4MCU5MyUyMEZsb3JpZGElMkMlMjBVU0F8ZW58MHx8MHx8fDI%3D"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Walt Disney World, Florida</h2>
+        <p>
+          The largest Disney destination with 4 theme parks, water parks,
+          resorts, and spectacular entertainment.
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1673380629001-d7bab3ef3b53?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fERpc25leWxhbmQlMjBQYXJpc3xlbnwwfHwwfHx8Mg%3D%3D"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Disneyland Paris</h2>
+        <p>
+          The fairy-tale European Disney wonder known for its romantic castles
+          and magical adventures.
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1565839751802-33cd9264527c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VG9reW8lMjBEaXNuZXl8ZW58MHx8MHx8fDI%3D"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Tokyo Disney Resort</h2>
+        <p>
+          Known worldwide for DisneySea, stunning visuals, and unique Japanese
+          Disney culture.
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <div id="modal5" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1587812544970-01fc1c228641?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SG9uZyUyMEtvbmclMjBEaXNuZXlsYW5kfGVufDB8fDB8fHwy"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Hong Kong Disneyland</h2>
+        <p>
+          A charming and colorful Disney park offering immersive Asian-inspired
+          magical experiences.
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <div id="modal6" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <img
+          src="https://images.unsplash.com/photo-1633851549055-55333a1d5290?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2hhbmdoYWklMjBEaXNuZXl8ZW58MHx8MHx8fDI%3D"
+          style="width: 100%; border-radius: 10px; margin-bottom: 15px"
+        />
+        <h2>Shanghai Disney</h2>
+        <p>
+          Home to the world’s largest Disney castle and technologically advanced
+          Disney attractions.
+        </p>
+        <a href="payment.html"><button class="btn">Book Now</button></a>
+      </div>
+    </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+      }
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+    </script>
+
+    <footer>© 2025 CastleTrips | All Rights Reserved</footer>
+  </body>
+</html>

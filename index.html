@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CastleTrips</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f8f9ff;
+        color: #333;
+      }
+
+      /* HEADER */
+      header {
+        background: #191216;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+      header h1 {
+        font-family: "Pacifico", cursive;
+        font-size: 2rem;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      /* HERO */
+      .hero {
+        background: url("https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?q=80&w=1109&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+          center/cover no-repeat;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 20px;
+      }
+      .hero h2 {
+        font-size: 3rem;
+        text-shadow: 2px 2px #000;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-top: 15px;
+        text-shadow: 1px 1px #000;
+      }
+
+      .btn {
+        margin-top: 25px;
+        padding: 15px 35px;
+        background: linear-gradient(45deg, #4c6ef5, #ffb6c1);
+        border-radius: 30px;
+        border: none;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* NEW INFO SECTION */
+      .info-section {
+        padding: 60px 20px;
+        text-align: center;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .info-section h2 {
+        color: blue;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-family: "Pacifico", cursive;
+      }
+      .info-boxes {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      .box {
+        background: white;
+        width: 280px;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+      .box:hover {
+        transform: translateY(-5px);
+      }
+      .box h3 {
+        color: #f54c4c;
+        margin-bottom: 10px;
+      }
+      /* Highly specific selector to avoid overrides */
+      .info-section .info-boxes .box .box-img {
+        width: 55px;
+        height: 55px;
+        display: block;
+        margin: 12px auto;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+        transition: transform 0.25s ease, filter 0.25s ease;
+      }
+
+      /* hover effect */
+      .info-section .info-boxes .box:hover .box-img {
+        transform: translateY(-4px) scale(1.06);
+        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18));
+      }
+
+      /* fallback if something is forcibly overriding width/height */
+      .info-section .info-boxes .box img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* TESTIMONIALS */
+      .testimonial-section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+      .testimonial-section h2 {
+        color: #4c6ef5;
+        font-family: Pacifico;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .testimonials {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .testimonial {
+        width: 300px;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial h4 {
+        color: #f54c4c;
+        margin-top: 10px;
+      }
+
+      /* FOOTER */
+      footer {
+        margin-top: 40px;
+        background: #93a5ed;
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CastleTrips</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="places.html">Places</a>
+        <a href="payment.html">Book Now</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Where Magic Meets Adventure ✨</h2>
+      <p>Plan your magical Disney journey easily with CastleTrips!</p>
+      <a href="places.html"
+        ><button class="btn">Explore Disney Parks</button></a
+      >
+    </section>
+
+    <!-- NEW INFO SECTION -->
+    <section class="info-section">
+      <h2>Why Book With CastleTrips?</h2>
+      <div class="info-boxes">
+        <div class="box">
+          <img
+            src="https://media.istockphoto.com/id/1470261520/photo/wallet-icon-with-dollar-coin-and-note-on-white-background-3d-render-concept-for-money-savings.webp?a=1&b=1&s=612x612&w=0&k=20&c=k95rSdQl4Tw_Y2pozvrExi7r5zWf1SbIiO0rzxv52OU="
+            alt="Best Prices"
+          />
+          <h3>✨ Best Prices</h3>
+          <p>Exclusive deals and budget-friendly packages for Disney lovers.</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://media.istockphoto.com/id/1470028342/photo/star-badge-medal-icon-on-white-background-3d-render-concept-for-wining-prize-premium-guarantee.webp?a=1&b=1&s=612x612&w=0&k=20&c=KkKA1QPArs1ABvGu7wZhMfnh6Xg9gbbXh_aKSUZeg-s="
+            alt="Trusted Service"
+          />
+          <h3>🏰 Trusted Service</h3>
+          <p>
+            Your magical trip is handled with care by verified travel partners.
+          </p>
+        </div>
+        <div class="box">
+          <img
+            src="https://media.istockphoto.com/id/2232652053/photo/travel-calendar.webp?a=1&b=1&s=612x612&w=0&k=20&c=YBAnjKFGG5S32iiMdTBwAXMsN5DAunaZsuPctkU5Id0="
+            alt="Easy Booking"
+          />
+          <h3>🎡 Easy Booking</h3>
+          <p>Simple steps to reserve your dream Disney vacation instantly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-section">
+      <h2>Traveler Reviews</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>“Made my family trip to Disney absolutely magical!”</p>
+          <h4>- Aisha</h4>
+        </div>
+        <div class="testimonial">
+          <p>“Fast booking and the best customer support!”</p>
+          <h4>- David</h4>
+        </div>
+        <div class="testimonial">
+          <p>“Highly recommended for stress-free Disney planning!”</p>
+          <h4>- Priya</h4>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 CastleTrips | All Rights Reserved</footer>
+  </body>
+</html>
